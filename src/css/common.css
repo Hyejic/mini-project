@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Source+Code+Pro&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css');
+
+@font-face {
+  font-family: 'Product Sans R';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Product Sans R"), url('../fonts/Product-Sans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Product-Sans-B';
+  font-style: normal;
+  font-weight: bold;
+  src: url('../fonts/Product-Sans-Bold.ttf') format('truetype');
+}
+/* 
+font-family: 'Roboto', sans-serif;
+font-family: 'Source Code Pro', monospace;
+*/
+html {
+  font-size: 0.2778vw;
+  color: #000;
+}
+body{
+  position: relative;
+  font-family: 'Product-Sans-R', sans-serif;
+  font-weight: 400;
+  line-height: 1.3;
+  background-color: #18191E;
+}
+button{
+  background: inherit ;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  cursor: pointer
+}
+input{
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  border: none;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* common */
+img {
+  width: 100%;
+}
+.ir-blind {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  margin: 0;
+}
+.btn {
+  padding: 0;
+  font-size: 1em;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.btn-dropdown {
+  position: absolute;
+  top: 16em;
+  right: 8em;
+  width: 24em;
+  height: 24em;
+  background: url('../images/btn_drop-down.png') no-repeat 100%;
+  background-size: cover;
+  transform: rotate(180deg);
+}
+.btn-comment {
+  margin-left: 17rem;
+  padding-left: 20rem;
+  font-family: "Source Code Pro";
+  font-size: 12em;
+  color: #FF3E00;
+  background: url('../images/btn_comment.png') no-repeat left center;
+  background-size: 14rem 14rem;
+  vertical-align: middle;
+}
+/* layer */
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #18191E;
+  overflow: hidden;
+  z-index: 101;
+}
+.layer__inner {
+  padding: 20em 20em 32em;
+}
+.layer__btn-back {
+  width: 24em;
+  height: 24em;
+  background: url('../images/btn_back_arrow.png') no-repeat center;
+  background-size: cover;
+
+}
+
+/* user rank */
+.user-rank {
+  font-size: 12em;
+  padding: 1rem 8rem 0;
+  color: #838489;
+  border: 1px solid #838489;
+  border-radius: 10em;
+}
+.user-rank.super {
+  color: #FF3E00;
+  border-color: #FF3E00;
+}
+.user-rank.normal {
+  color: #FF6B01;
+  border-color: #FF6B01;
+}
