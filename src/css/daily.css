@@ -1,0 +1,44 @@
+.sub-title {
+  font-family: 'Product-Sans-B';
+  font-size: 28em;
+  color:#fff;
+}
+.daily-list-wrap {
+  margin-bottom: 28em;
+}
+.daily-list {
+  background-color: #2C2D32;
+  border-radius: 6em;
+}
+.daily-list__header {
+  padding: 16em;
+  margin-top: 24em;
+  border-bottom: 1px solid #38393D;
+}
+.daily__user-rank {
+  font-size: 10em;
+}
+.daily-list__name {
+  display: block;
+  margin-top:5rem;
+  font-family: 'Product-Sans-R';
+  font-size: 12em;
+  color: #fff;
+}
+.daily-list__tit {
+  margin-top: 10rem;
+  color: #fff;
+  font-family: 'Product-Sans-B';
+  font-size: 26em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+.daily-list__time {
+  display: block;
+  margin-top: 8em;
+  font-family: 'Source Code Pro';
+  color: #838489;
+}

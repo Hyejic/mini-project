@@ -18,7 +18,7 @@ export const ListView = () => {
           <a className="cont-aside__link" href="#">linkpage</a>
           <div className="cont-aside__info">
             <span className="cont-aside__score">1234</span>
-            <button className="btn btn__comment">10</button>
+            <button className="btn btn-comment">10</button>
           </div>
         </div>
         <button className="btn btn-dropdown">
@@ -42,7 +42,7 @@ export const ListView = () => {
           <a className="cont-aside__link" href="#">linkpage</a>
           <div className="cont-aside__info">
             <span className="cont-aside__score">1234</span>
-            <button className="btn btn__comment">10</button>
+            <button className="btn btn-comment">10</button>
           </div>
         </div>
         <button className="btn btn-dropdown">
@@ -66,7 +66,7 @@ export const ListView = () => {
           <a className="cont-aside__link" href="#">linkpage</a>
           <div className="cont-aside__info">
             <span className="cont-aside__score">1234</span>
-            <button className="btn btn__comment">10</button>
+            <button className="btn btn-comment">10</button>
           </div>
         </div>
         <button className="btn btn-dropdown">

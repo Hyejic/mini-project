@@ -15,13 +15,13 @@
   display: block;
   padding-top: 2rem;
   font-family: 'Source Code Pro';
-  font-size: 12px;
+  font-size: 12em;
   color: #838489;
 }
 .detail__title {
   margin-top: 20rem;
   font-family: 'Product-Sans-B';
-  font-size: 30px;
+  font-size: 30em;
   color: #fff;
   line-height: 1.4;
 }
