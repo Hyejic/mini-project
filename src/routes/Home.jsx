@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Header } from '../components/Header';
 import { DailyNews } from '../components/DailyNews';
 import { ListWrap } from '../components/ListWrap';

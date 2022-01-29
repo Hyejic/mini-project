@@ -1,9 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar } from 'swiper';
+import { Pagination, Scrollbar } from 'swiper';
 import 'swiper/css';
-// import 'swiper/css/pagination';
-// import 'swiper/css/navigation';
-import {ListNav} from "./ListNav"
 import {ListView} from "./ListView"
 import "../css/cardlist.css"
 
@@ -30,13 +27,13 @@ export const ListWrap = () => {
               return '<button class="' + className + '">' + (menu[index]) + '</button>';
             },
         }}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
+        // onSlideChange={() => console.log('slide change')}
+        // onSwiper={(swiper) => console.log(swiper)}
       >
-        <SwiperSlide><ListView type="topstories"/></SwiperSlide>
-        <SwiperSlide><ListView type="newstories"/></SwiperSlide>
-        <SwiperSlide><ListView type="askstories"/></SwiperSlide>
-        <SwiperSlide><ListView type="showstories"/></SwiperSlide>
+        <SwiperSlide><ListView type="top"/></SwiperSlide>
+        <SwiperSlide><ListView type="new"/></SwiperSlide>
+        <SwiperSlide><ListView type="ask"/></SwiperSlide>
+        <SwiperSlide><ListView type="show"/></SwiperSlide>
       </Swiper>
     </section>
   )
