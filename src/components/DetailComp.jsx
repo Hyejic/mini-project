@@ -1,6 +1,6 @@
 import '../css/detail.css';
 
-export const Detail = () => {
+export const DetailComp = () => {
   return (
     <section className="layer detail">
       <div className="layer__inner detail__inner">

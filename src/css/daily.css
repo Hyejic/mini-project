@@ -1,10 +1,10 @@
-.sub-title {
+.daily-wrap {
+  padding: 20em 20em 0 20em;
+}
+.daily-title {
   font-family: 'Product-Sans-B';
   font-size: 28em;
   color:#fff;
-}
-.daily-list-wrap {
-  margin-bottom: 28em;
 }
 .daily-list {
   background-color: #2C2D32;

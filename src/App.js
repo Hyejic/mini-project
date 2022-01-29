@@ -1,14 +1,15 @@
-import { Header } from './components/Header';
-import { ListWrap } from './components/ListWrap'
-import { Detail } from './components/Detail'
+import { Routes, Route } from 'react-router-dom';
+import { Home } from './routes/Home';
+import { Detail } from './routes/Detail';
 import './css/common.css'
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <ListWrap />
-      {/* <Detail /> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/detail/" element={<Detail />} />
+      </Routes>
     </div>
   );
 }

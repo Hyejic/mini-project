@@ -2,8 +2,8 @@ import '../css/daily.css'
 
 export const DailyNews = () => {
   return (
-    <div>
-      <h2 className="sub-title">Daily News</h2>
+    <div className="daily-wrap">
+      <h2 className="daily-title">Daily News</h2>
       <ul className="daily-list-wrap">
         <li className="daily-list">
           <div className="daily-list__header">

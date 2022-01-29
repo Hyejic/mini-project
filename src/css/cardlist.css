@@ -20,7 +20,6 @@
   width: 100%;
   height: 1px;
   background-color: #38393D;
-  z-index: -1;
 }
 .list-section__nav button {
   position: relative;
@@ -33,18 +32,19 @@
 .list-section__nav button:last-child {
   margin-right: 0;
 }
-.list-section__nav button.active {
+.list-section__nav button.swiper-pagination-bullet-active {
   color: #FF3E00;
 }
-.list-section__nav button.active::after {
+.list-section__nav button.swiper-pagination-bullet-active::after {
   content: "";
   display: block;
   position: absolute;
   left: 0;
-  bottom: -1px;
+  bottom: 0;
   height: 1px;
   width: 100%;
   background-color: #FF3E00;
+  z-index: 1;
 }
 .list-item {
   position: relative;
