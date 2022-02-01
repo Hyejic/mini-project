@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
-export const List = ({ story: { id, by, title, kids, time, score, url } }) => {
+// console.log({story: {by}})
+const List = ({ story: { id, by, title, kids, time, score, url}}) => {
   return (
     <li className="list-item open">
       <div className="list-item__tit-wrap">
@@ -20,7 +21,11 @@ export const List = ({ story: { id, by, title, kids, time, score, url } }) => {
         <a className="cont-aside__link" href={url}>{by}</a>
         <div className="cont-aside__info">
           <span className="cont-aside__score">{score}</span>
-          <button className="btn btn-comment">10</button>
+          {
+            kids === undefined 
+            ? <button className="btn btn-comment">0</button>
+            : <button className="btn btn-comment">{kids.length}</button>
+          }
         </div>
       </div>
       <button className="btn btn-dropdown">
@@ -29,3 +34,5 @@ export const List = ({ story: { id, by, title, kids, time, score, url } }) => {
     </li>
   );
 };
+
+export default List;
