@@ -1,52 +1,30 @@
-// import { useState, useEffect } from 'react';
-// import { getStories } from '../utils/apis';
+// import { useEffect, useState } from "react";
+// import { useSelector, useDispatch } from "react-redux";
+// import { getStories } from '../redux/action';
 
 // export const UseDataFetcher = (type) => {
-//   const [stories, setStories] = useState([]);
+  
 //   const [isLoading, setIsLoading] = useState(false);
+//   const [stories, setStories] = useState([]);
+//   const dispatch = useDispatch();
+//   const state = useSelector((state) => state);
 
+  
+//   // console.log('🤔',state)
 //   useEffect(() => {
-//     setIsLoading(true);
-//     getStories(type)
-//       .then((stories) => {
-//         setStories(stories);
-//         setIsLoading(false);
-//       })
-//       .catch(() => {
-//         setIsLoading(false);
-//       });
+//     // setIsLoading(true);
+//     // setStories(stories);
+//     dispatch(getStories(type))
+//     //   .then((state) => {
+//     //     setStories(state);
+//     //     setIsLoading(false);
+//     //   })
+//     //   .catch(() => {
+//     //     setIsLoading(false);
+//     //   });
 //   }, [type]);
-
-//   return { isLoading, stories };
+//     // console.log(stories)
+//     console.log('🤔',state)
+      
+//   return { isLoading, state };
 // };
-
-// import React, { useEffect } from "react";
-// import { useSelector, useDispatch } from "react-redux";
-// import {fetchPosts} from "./action"
-
-// const Posts = () => {
-
-//   const dispatch = useDispatch()
-//   const state = useSelector((state) => state)
-
-//   useEffect(() => {
-//     dispatch(fetchPosts())
-//   }, []) 
-
-//   const renderPosts = () => {
-//     if(state.loading) {
-//       return <h1>Loading</h1>
-//     }
-//     return state.items.map((el) => {
-//       return <h3 key={el.id}>{el.title}</h3>
-//     })
-//   }
-
-//   return (
-//     <div>
-//       {renderPosts()}
-//     </div>
-//   )
-// }
-
-// export default Posts;

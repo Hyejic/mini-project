@@ -1,23 +1,23 @@
-const initState = {
+const askInitState = {
   items: [],
   loading: false,
   error: null
 };
-const storyReducer = (state = initState, action) => {
+const newReducer = (state = askInitState, action) => {
   switch (action.type) {
-    case "FETCH_STORY_REQUEST" :
+    case "FETCH_ASK_REQUEST" :
       return {
         ...state,
         loading: true,
         error: null,
       };
-    case "FETCH_STORY_SUCCESS" :
+    case "FETCH_ASK_SUCCESS" :
       return {
         ...state,
         loading: false,
         items: action.payload,
       };
-    case "FETCH_STORY_FAILURE" :
+    case "FETCH_ASK_FAILURE" :
       return {
         ...state,
         loading: false,
@@ -28,4 +28,4 @@ const storyReducer = (state = initState, action) => {
   }
 }
 
-export default storyReducer;
+export default newReducer;

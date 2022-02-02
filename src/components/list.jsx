@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-// console.log({story: {by}})
 const List = ({ story: { id, by, title, kids, time, score, url}}) => {
   return (
     <li className="list-item open">

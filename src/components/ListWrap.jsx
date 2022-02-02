@@ -1,7 +1,10 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Scrollbar } from 'swiper';
 import 'swiper/css';
-import {ListView} from "./ListView"
+import {TopListView} from "./TopListView"
+import {NewListView} from "./NewListView"
+import {AskListView} from "./AskListView"
+import {ShowListView} from "./ShowListView"
 import "../css/cardlist.css"
 
 export const ListWrap = () => {
@@ -9,12 +12,7 @@ export const ListWrap = () => {
   return (
     <section className="list-section">
       <nav className="list-section__nav">
-        {/* <button className="active">Top</button>
-        <button>New</button>
-        <button>Ask</button>
-        <button>Show</button> */}
       </nav>
-      {/* <ListNav /> */}
       <Swiper
       modules={[Pagination, Scrollbar]}
         spaceBetween={50}
@@ -30,10 +28,10 @@ export const ListWrap = () => {
         // onSlideChange={() => console.log('slide change')}
         // onSwiper={(swiper) => console.log(swiper)}
       >
-        <SwiperSlide><ListView type="top"/></SwiperSlide>
-        <SwiperSlide><ListView type="new"/></SwiperSlide>
-        <SwiperSlide><ListView type="ask"/></SwiperSlide>
-        <SwiperSlide><ListView type="show"/></SwiperSlide>
+        <SwiperSlide><TopListView /></SwiperSlide>
+        <SwiperSlide><NewListView /></SwiperSlide>
+        <SwiperSlide><AskListView /></SwiperSlide>
+        <SwiperSlide><ShowListView /></SwiperSlide>
       </Swiper>
     </section>
   )
