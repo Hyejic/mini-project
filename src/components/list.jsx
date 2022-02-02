@@ -5,9 +5,6 @@ const List = ({ story: { id, by, title, kids, time, score, url}}) => {
     <li className="list-item open">
       <div className="list-item__tit-wrap">
       <Link to={`/detail`} className="list-item__tit"><h3>{title}</h3></Link>
-        {/* <a className="list-item__tit" href="#">
-          <h3>{title}</h3>
-        </a> */}
       </div>
       <div className="list-item__commnet comment-priview">
       <div className="comment-priview__info">
@@ -17,7 +14,7 @@ const List = ({ story: { id, by, title, kids, time, score, url}}) => {
         <p className="comment-priview__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe porro sed nesciunt velit quae! Unde quam adipisci illo? Rem atque quisquam animi est officiis a debitis consectetur blanditiis dolorem earum?a debitis consectetur blanditiis dolorem earum?</p>
       </div>
       <div className="list-item__cont cont-aside">
-        <a className="cont-aside__link" href={url}>{by}</a>
+        <a className="cont-aside__link" href={url} target="_blank" rel="noreferrer">{by}</a>
         <div className="cont-aside__info">
           <span className="cont-aside__score">{score}</span>
           {

@@ -6,14 +6,27 @@
   font-size: 28em;
   color:#fff;
 }
+.daily-list-wrap{
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow-x: scroll;
+}
 .daily-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 0 auto;
+  width: 100%;
+  margin-top: 24em;
   background-color: #2C2D32;
   border-radius: 6em;
 }
+.daily-list + .daily-list{
+  margin-left: 20em;
+}
 .daily-list__header {
   padding: 16em;
-  margin-top: 24em;
-  border-bottom: 1px solid #38393D;
 }
 .daily__user-rank {
   font-size: 10em;

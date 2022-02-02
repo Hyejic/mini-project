@@ -1,23 +1,23 @@
-const askInitState = {
+const dailyInitState = {
   items: [],
   loading: false,
   error: null
 };
-const askReducer = (state = askInitState, action) => {
+const dailyReducer = (state = dailyInitState, action) => {
   switch (action.type) {
-    case "FETCH_ASK_REQUEST" :
+    case "FETCH_DAILY_REQUEST" :
       return {
         ...state,
         loading: true,
         error: null,
       };
-    case "FETCH_ASK_SUCCESS" :
+    case "FETCH_DAILY_SUCCESS" :
       return {
         ...state,
         loading: false,
         items: action.payload,
       };
-    case "FETCH_ASK_FAILURE" :
+    case "FETCH_DAILY_FAILURE" :
       return {
         ...state,
         loading: false,
@@ -28,4 +28,4 @@ const askReducer = (state = askInitState, action) => {
   }
 }
 
-export default askReducer;
+export default dailyReducer;
