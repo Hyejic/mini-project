@@ -1,10 +1,31 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+// import { getKidsStory } from '../action/commentAction';
+import Axios from "axios"
+import { BASE_API_URL } from '../action/constants';
 
 const List = ({ story: { id, by, title, kids, time, score, url}}) => {
+  const firstKids = kids === undefined ? null : kids[0];
+  
+  // const [comment, setComment] = useState([]);
+  // const getKidsStory = async (id) => {
+  //   try {
+  //     const story = await Axios.get(`${BASE_API_URL}/item/${id}.json`);
+  //      console.log(story)
+  //     return story;
+  //   } catch (error) {
+  //     console.log('Error while getting a story.');
+  //   }
+  // };
+  // useEffect(() => {
+  //   getKidsStory(firstKids)
+    
+  // }, []);
+
   return (
-    <li className="list-item open">
+    <li className="list-item open" id={id}>
       <div className="list-item__tit-wrap">
-      <Link to={`/detail`} className="list-item__tit"><h3>{title}</h3></Link>
+      <Link to={`/detail${id}`} className="list-item__tit"><h3>{title}</h3></Link>
       </div>
       <div className="list-item__commnet comment-priview">
       <div className="comment-priview__info">

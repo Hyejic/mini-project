@@ -17,7 +17,7 @@ export const getDailyStories = () => async (dispatch, getState) => {
     const { data: storyIds } = await Axios.get(
       `${BASE_API_URL}/newstories.json`
       );
-    const stories = await Promise.all(storyIds.slice(0, 10).map((storyId) => getDailyStory(storyId)));
+    const stories = await Promise.all(storyIds.slice(0, 5).map((storyId) => getDailyStory(storyId)));
     dispatch({type:"FETCH_DAILY_SUCCESS", payload: stories})
   } catch (error) {
     dispatch({type:"FETCH_DAILY_FAILURE", error: error})
