@@ -36,14 +36,18 @@ export const Detail = () => {
     return { isLoading, stories };
   };
   const { isLoading, stories } = useDataFetcher(params.id);
-  if(stories.data){
-    console.log(stories.data.id)
-  }
+
+  const Component = () => {
+    if ( stories.data ) {
+      return <DetailCont story={stories.data} />
+    } 
+    return null;
+  } 
   
   return (
     isLoading 
     ? <div>isLoading...</div> 
-    : stories.data ? <DetailCont story={stories.data} /> : null
+    : <Component/>
   )
 }
   // <section className="layer detail">

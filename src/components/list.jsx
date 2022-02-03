@@ -25,7 +25,7 @@ const List = ({ story: { id, by, title, kids, time, score, url}}) => {
   return (
     <li className="list-item open" id={id}>
       <div className="list-item__tit-wrap">
-      <Link to={`/detail${id}`} className="list-item__tit"><h3>{title}</h3></Link>
+      <Link to={`/detail/${id}`} className="list-item__tit"><h3>{title}</h3></Link>
       </div>
       <div className="list-item__commnet comment-priview">
       <div className="comment-priview__info">

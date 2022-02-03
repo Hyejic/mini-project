@@ -21,3 +21,20 @@ export const timeForToday = (value) => {
   return `${Math.floor(betweenTimeDay / 365)} year ago`;
 }
 
+export const karmaSet = (karma) => {
+  console.log('???????//',karma)
+  switch(karma) {
+    case (karma >= 30 && karma <= 500) :
+      console.log('브론즈')
+      break;
+    case (karma > 500) :
+      console.log('normal');
+      break;
+    case (karma >= 36002) :
+      console.log('super');
+      break;
+    default:
+      console.log('error')
+      break;
+  }
+}

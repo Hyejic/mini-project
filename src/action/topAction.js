@@ -16,7 +16,7 @@ export const getTopStories = () => async (dispatch, getState) => {
     const { data: storyIds } = await Axios.get(
       `${BASE_API_URL}/topstories.json`
       );
-    const stories = await Promise.all(storyIds.slice(0, 5).map((storyId) => getTopStory(storyId)));
+    const stories = await Promise.all(storyIds.slice(0, 10).map((storyId) => getTopStory(storyId)));
     dispatch({type:"FETCH_TOP_SUCCESS", payload: stories})
   } catch (error) {
     dispatch({type:"FETCH_TOP_FAILURE", error: error})
