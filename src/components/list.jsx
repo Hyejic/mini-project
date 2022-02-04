@@ -29,7 +29,8 @@ const List = ({ story: { id, by, title, kids, time, score, url}}) => {
       </div>
       <div className="list-item__commnet comment-priview">
       <div className="comment-priview__info">
-          <strong className="comment-priview__name">{by}</strong>
+          <Link to={`/user/${by}`} className="comment-priview__name">{by}</Link>
+          {/* <strong className="comment-priview__name">{by}</strong> */}
           <span className="comment-priview__time">11 minutes ago</span>
         </div>
         <p className="comment-priview__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe porro sed nesciunt velit quae! Unde quam adipisci illo? Rem atque quisquam animi est officiis a debitis consectetur blanditiis dolorem earum?a debitis consectetur blanditiis dolorem earum?</p>

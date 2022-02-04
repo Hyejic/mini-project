@@ -8,10 +8,10 @@
   src: local("Product Sans R"), url('../fonts/Product-Sans-Regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'Product-Sans-B';
+  font-family: 'Product Sans B';
   font-style: normal;
-  font-weight: bold;
-  src: url('../fonts/Product-Sans-Bold.ttf') format('truetype');
+  font-weight: normal;
+  src: local("Product Sans B"), url('../fonts/Product-Sans-Regular.ttf') format('truetype');
 }
 /* 
 font-family: 'Roboto', sans-serif;
@@ -23,7 +23,7 @@ html {
 }
 body{
   position: relative;
-  font-family: 'Product-Sans-R', sans-serif;
+  font-family: 'Product Sans R', sans-serif;
   font-weight: 400;
   line-height: 1.3;
   background-color: #18191E;

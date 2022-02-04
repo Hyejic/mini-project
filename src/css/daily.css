@@ -2,7 +2,7 @@
   padding: 20em 20em 0 20em;
 }
 .daily-title {
-  font-family: 'Product-Sans-B';
+  font-family: 'Product Sans B';
   font-size: 28em;
   color:#fff;
 }
@@ -34,14 +34,13 @@
 .daily-list__name {
   display: block;
   margin-top:5rem;
-  font-family: 'Product-Sans-R';
   font-size: 12em;
   color: #fff;
 }
 .daily-list__tit {
   margin-top: 10rem;
   color: #fff;
-  font-family: 'Product-Sans-B';
+  font-family: 'Product Sans B';
   font-size: 26em;
   overflow: hidden;
   text-overflow: ellipsis;

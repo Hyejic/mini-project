@@ -1,0 +1,53 @@
+.user__header{
+  margin-top: 35em;
+}
+.user__user-name {
+  display: block;
+  margin-bottom: 6rem;
+  color: #fff;
+  font-size: 24em;
+}
+.user__post-karma,
+.user__post-joined {
+  font-family: 'Source Code Pro';
+  font-size: 12em;
+  color: #838489;
+}
+
+.user__post-karma {
+  position: relative;
+  padding-right: 10rem;
+  margin-right: 8rem;
+}
+.user__post-karma::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0.3em;
+  width: 1px;
+  height: 8rem;
+  background-color: #838489;
+}
+.user__desc{
+  margin-top: 24rem;
+  font-size: 13em;
+  color: #fff;
+}
+.user__slider{
+  padding: 0 20em;
+}
+.user__slider .list-section__nav button {
+  min-width: 33.3333%;
+  font-family: 'Product Sans R';
+  font-size: 12em;
+  line-height: 24rem;
+  margin-right: 0;
+}
+.user__slider .list-section__nav::after {
+  height: 2px
+}
+.user__slider .list-section__nav button.swiper-pagination-bullet-active::after {
+  height: 2px;
+  bottom: -1px;
+}
