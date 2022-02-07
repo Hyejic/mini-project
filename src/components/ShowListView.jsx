@@ -6,6 +6,7 @@ import List  from './List';
 export const ShowListView = () => {
   const dispatch = useDispatch();
   const state = useSelector(state => state.showReducer);
+  
   useEffect(() => {
     dispatch(getShowStories())
   }, []);

@@ -16,6 +16,7 @@ const topReducer = (state = topInitState, action) => {
         ...state,
         loading: false,
         items: action.payload,
+        comment: action.comments,
       };
     case "FETCH_TOP_FAILURE" :
       return {

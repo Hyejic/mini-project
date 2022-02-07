@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { getUserInfo } from '../action/userInfoAction';
 import { Link } from "react-router-dom";
@@ -48,8 +48,6 @@ export const DetailCont = ({story}) => {
     //   <span className="user-rank super detail__user-rank">Super karma</span>
     // }
   }
-  // console.log(state.loading)
-  // console.log(state.item)
   if(state.item){
     console.log(state.item)
   }

@@ -62,6 +62,7 @@
 .list-item__tit {
   display: block;
   margin-right: 16em;
+  /* min-height: 63em; */
 }
 .list-item__tit h3 {
   font-size: 16em;
