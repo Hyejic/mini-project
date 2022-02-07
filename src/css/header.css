@@ -2,8 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
   padding: 16em 17em 16em 20em;
-
+  background: #18191E;
+  box-sizing: border-box;
+  z-index: 10;
 }
 .logo {
   width: 26em;

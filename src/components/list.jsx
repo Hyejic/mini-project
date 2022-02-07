@@ -18,17 +18,23 @@ const List = ({ story: { id, by, title, kids, time, score, url}}) => {
   
   
   const CommnetText = () => {
+    const [isOpen, setToggleClass] = useState(false);
+
     if(comment.data){
       const text = comment.data.text;
       return (
-        <div className="list-item__commnet comment-priview">
-          <div className="comment-priview__info">
-            <Link to={`/user/${comment.data.by}`} className="comment-priview__name">{comment.data.by}</Link>
-            {/* <strong className="comment-priview__name">{by}</strong> */}
-            <span className="comment-priview__time">{timeForToday(comment.data.time)}</span>
+        <div className={isOpen ? "list-item__commnet comment-priview open": "list-item__commnet comment-priview"}>
+          <div className="comment-priview__inner">
+            <div className="comment-priview__info">
+              <Link to={`/user/${comment.data.by}`} className="comment-priview__name">{comment.data.by}</Link>
+              <span className="comment-priview__time">{timeForToday(comment.data.time)}</span>
+            </div>
+            <p className="comment-priview__desc"  dangerouslySetInnerHTML={{__html: text}}></p>
           </div>
-          <p className="comment-priview__desc"  dangerouslySetInnerHTML={{__html: text}}></p>
-          <button className="btn btn-dropdown">
+          <button className="btn btn-dropdown" onClick={() => {
+            setToggleClass(isOpen => !isOpen)
+            console.log('ji')
+          }}>
             <span className="ir-blind">댓글 미리보기</span>
           </button>
         </div>
@@ -37,7 +43,7 @@ const List = ({ story: { id, by, title, kids, time, score, url}}) => {
     return false;
   }
   return (
-    <li className="list-item open" id={id}>
+    <li className="list-item" id={id}>
       <div className="list-item__tit-wrap">
       <Link to={`/detail/${id}`} className="list-item__tit"><h3>{title}</h3></Link>
       </div>
