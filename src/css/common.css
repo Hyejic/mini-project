@@ -97,6 +97,7 @@ img {
   height: 100vh;
   width: 100%;
   background-color: #18191E;
+  overflow-y: scroll;
   z-index: 101;
 }
 .layer__inner {
@@ -118,11 +119,11 @@ img {
   border: 1px solid #838489;
   border-radius: 10em;
 }
-.user-rank.super {
+.user-rank.user-rank--super {
   color: #FF3E00;
   border-color: #FF3E00;
 }
-.user-rank.normal {
+.user-rank.user-rank--normal {
   color: #FF6B01;
   border-color: #FF6B01;
 }

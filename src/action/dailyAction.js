@@ -1,6 +1,6 @@
-import Axios from "axios"
+import Axios from 'axios'
 import { BASE_API_URL } from './constants';
-import getStory from "./storyAction";
+import getStory from './storyAction';
 
 export const getDailyStories = () => async (dispatch, getState) => {
   dispatch({type: "FETCH_DAILY_REQUEST"})

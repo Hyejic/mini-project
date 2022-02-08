@@ -21,14 +21,22 @@ export const timeForToday = (value) => {
   return `${Math.floor(betweenTimeDay / 365)} year ago`;
 }
 
-export const karmaSet = (karma) => {
+export const Karma = ({karma}) => {
   if(karma >= 30 && karma <= 500){
-    return 'Karma';
+    return (
+      <span className="user-rank daily__user-rank">Karma</span>
+    );
   }else if(karma > 500 && karma <= 40000) {
-    return 'Normal karma';
+    return (
+      <span className="user-rank user-rank--normal daily__user-rank">Normal karma</span>
+    );
   }else if(karma > 40000) {
-    return 'Super karma';
+    return (
+      <span className="user-rank user-rank--super daily__user-rank">Super karma</span>
+    );
   }else{
-    return 'rookie';
+    return (
+      <span className="user-rank daily__user-rank">Rookie</span>
+    )
   }
 }

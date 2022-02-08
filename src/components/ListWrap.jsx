@@ -1,11 +1,11 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Scrollbar } from 'swiper';
 import 'swiper/css';
-import {TopListView} from "./TopListView"
-import {NewListView} from "./NewListView"
-import {AskListView} from "./AskListView"
-import {ShowListView} from "./ShowListView"
-import "../css/cardlist.css"
+import {TopListView} from './TopListView';
+import {NewListView} from './NewListView';
+import {AskListView} from './AskListView';
+import {ShowListView} from './ShowListView';
+import '../css/cardlist.css';
 
 export const ListWrap = () => {
   const menu = ['Top', 'New', 'Ask', 'Show']

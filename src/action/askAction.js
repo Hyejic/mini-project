@@ -1,6 +1,6 @@
-import Axios from "axios"
+import Axios from 'axios'
 import { BASE_API_URL } from './constants';
-import getStory from "./storyAction";
+import getStory from './storyAction';
 
 export const getAskStories = () => async (dispatch, getState) => {
   dispatch({type: "FETCH_ASK_REQUEST"})

@@ -33,6 +33,9 @@
   line-height: 1.5;
   color: #CECFD4;
 }
+.detail__desc * {
+  white-space: inherit;
+}
 .detail__inner::after {
   content: "";
   position: fixed;

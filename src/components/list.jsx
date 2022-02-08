@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { timeForToday } from "../utile/script";
-import getStory from "../action/storyAction";
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { timeForToday } from '../utile/script';
+import getStory from '../action/storyAction';
 
 const List = ({ story: { id, by, title, kids, time, score, url}}) => {
   const firstKids = kids === undefined ? null : kids[0];
