@@ -35,7 +35,8 @@ export const DetailCont = ({story}) => {
   const CommentBtn = () => {
     if(story.kids){
       return (
-        <button className="btn detail__btn-commont">{story.kids.length} commemts</button>
+        <Link to={`/comments/${story.id}`} className="btn detail__btn-commont" >{story.kids.length} commemts</Link>
+        // <button className="btn detail__btn-commont">{story.kids.length} commemts</button>
       )
     }
     return false;
