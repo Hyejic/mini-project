@@ -56,11 +56,11 @@ export const DetailCont = ({story}) => {
       <div className="layer__inner detail__inner">
         <Link to={`/`} className="btn layer__btn-back" ><span className="ir-blind">뒤로가기</span></Link>
         <div className="detail__header">
-          {
+          {/* {
             state.loading ? null
             // : <div>dddd</div>
             : (state.item ? karma(state.item.data.karma) : null)
-          }
+          } */}
           <span className="user-rank super detail__user-rank">Super karma</span>
           <strong className="detail__user-name">{story.by}</strong>
           <strong className="detail__post-time">posted {timeForToday(story.time)}</strong>

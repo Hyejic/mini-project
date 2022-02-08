@@ -1,14 +1,14 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { getTopStories } from '../action/topAction';
-import List  from './List';
+import { getSubmission } from '../action/submissionAction';
+import List  from './List'; 
  
-export const TopListView = () => {
+export const UserSubmission = () => {
   const dispatch = useDispatch();
-  const state = useSelector(state => state.topReducer);
+  const state = useSelector(state => state.submissionReducer);
   
   useEffect(() => {
-    dispatch(getTopStories())
+    dispatch(getSubmission())
   }, []);
   
   return (

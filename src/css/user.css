@@ -1,3 +1,6 @@
+.user__inner {
+
+}
 .user__header{
   margin-top: 35em;
 }
@@ -33,9 +36,17 @@
   margin-top: 24rem;
   font-size: 13em;
   color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 .user__slider{
-  padding: 0 20em;
+}
+.user__slider .list-section__nav {
+  top: 0;
+  padding-top: 20em;
 }
 .user__slider .list-section__nav button {
   min-width: 33.3333%;

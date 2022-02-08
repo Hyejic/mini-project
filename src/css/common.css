@@ -97,7 +97,6 @@ img {
   height: 100vh;
   width: 100%;
   background-color: #18191E;
-  overflow: hidden;
   z-index: 101;
 }
 .layer__inner {

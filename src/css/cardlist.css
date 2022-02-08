@@ -99,6 +99,10 @@
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
+.comment-priview__desc a {
+  color: #838489;
+  text-decoration: underline;
+}
 .list-item__commnet {
   height: 0em;
   overflow: hidden;

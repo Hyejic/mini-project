@@ -33,7 +33,6 @@ const List = ({ story: { id, by, title, kids, time, score, url}}) => {
           </div>
           <button className="btn btn-dropdown" onClick={() => {
             setToggleClass(isOpen => !isOpen)
-            console.log('ji')
           }}>
             <span className="ir-blind">댓글 미리보기</span>
           </button>
