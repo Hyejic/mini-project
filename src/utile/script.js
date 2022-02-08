@@ -22,19 +22,13 @@ export const timeForToday = (value) => {
 }
 
 export const karmaSet = (karma) => {
-  console.log('???????//',karma)
-  switch(karma) {
-    case (karma >= 30 && karma <= 500) :
-      console.log('브론즈')
-      break;
-    case (karma > 500) :
-      console.log('normal');
-      break;
-    case (karma >= 36002) :
-      console.log('super');
-      break;
-    default:
-      console.log('error')
-      break;
+  if(karma >= 30 && karma <= 500){
+    return 'Karma';
+  }else if(karma > 500 && karma <= 40000) {
+    return 'Normal karma';
+  }else if(karma > 40000) {
+    return 'Super karma';
+  }else{
+    return 'rookie';
   }
 }
