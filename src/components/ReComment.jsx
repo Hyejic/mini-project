@@ -7,7 +7,7 @@ import '../css/comments.css';
 
 export const ReComment = () => {
   const params = useParams();
-  // console.log(params.id)
+  console.log(params.id)
   
   // const getDtailStory = async (id) => {
   //   try {
@@ -74,6 +74,7 @@ export const ReComment = () => {
     return roots;
   }
 
+  console.log('state',state)
   const commentData = state.items.map((item) => item.data.kids);
   console.log('commentData',commentData)
 

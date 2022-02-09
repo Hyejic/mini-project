@@ -1,8 +1,10 @@
+import Axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { getComments } from '../action/commentsAction';
 import { CommentLIst } from '../components/CommentLIst';
+import { BASE_API_URL } from '../action/constants';
 import '../css/comments.css';
 
 export const Comments = () => {
@@ -36,6 +38,7 @@ export const Comments = () => {
   //   return { isLoading, stories };
   // };
   // const { isLoading, stories } = useDataFetcher(params.id);
+  // console.log(stories)
 
   // const Component = () => {
   //   if ( stories.data ) {
@@ -61,6 +64,7 @@ export const Comments = () => {
           <Link to={`/`} className="btn layer__btn-back" ><span className="ir-blind">뒤로가기</span></Link>
         </div>
         <h3 className="comments__tit">Comments</h3>
+        {/* <Component /> */}
         <ul>
           { state.loading ? <div>Loading...</div>
             : state.items.map(({ data: story }) => story && <CommentLIst key={story.id} story={story} /> )

@@ -1,109 +1,109 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { timeForToday } from '../utile/script';
-import { ReComment } from './ReComment'
 import { getKidsStories } from '../action/reCommentAction';
 
 export const CommentLIst = ({ story: { id, by, text, kids, time, parent}}) => {
   const [isOpen, setIsOpen] = useState(true);
   // const [reIsOpen, setReIsOpen] = useState(true);
   const desc = text;
-  const params = useParams();
   const dispatch = useDispatch();
   const state = useSelector(state => state.reCommentReducer);
+  console.log('kids',kids)
   
   useEffect(() => {
-    dispatch(getKidsStories(params.id))
+    dispatch(getKidsStories(kids))
   }, []);
-  console.log(state)
-
-  // function createTree(list) {
-  //   // console.log('list',list)
-  //   var map = {},
-  //     node,
-  //     roots = [],
-  //     i;
   
-  //   for (i = 0; i < list.length; i += 1) {
-  //     map[list[i].id] = i; // initialize the map
-  //     list[i].children = []; // initialize the children
-  //   }
+  console.log('state',state)
   
-  //   for (i = 0; i < list.length; i += 1) {
-  //     node = list[i];
-  //     if (node.parentId) {
-  //       // if you have dangling branches check that map[node.parentId] exists
-  //       list[map[node.parentId]].children.push(node);
-  //     } else {
-  //       roots.push(node);
-  //     }
-  //   }
-  //   return roots;
-  // }
+  function createTree(list) {
+    // console.log('list',list)
+    var map = {},
+      node,
+      roots = [],
+      i;
+  
+    for (i = 0; i < list.length; i += 1) {
+      map[list[i].id] = i; // initialize the map
+      list[i].children = []; // initialize the children
+    }
+  
+    for (i = 0; i < list.length; i += 1) {
+      node = list[i];
+      if (node.parentId) {
+        // if you have dangling branches check that map[node.parentId] exists
+        list[map[node.parentId]].children.push(node);
+      } else {
+        roots.push(node);
+      }
+    }
+    return roots;
+  }
 
-  const commentData = state.items.map((item) => item.data.kids);
+  const commentData = kids;
   console.log('commentData',commentData)
 
-  // function Comment({ comment, collapse }) {
-  //   const nestedComments = (comment.children || []).map(comment => {
-  //     return <Comment key={comment.id} comment={comment} />
-  //   })
+  function Comment({ comment, collapse }) {
+    const nestedComments = (comment.children || []).map(comment => {
+      return <Comment key={comment.id} comment={comment} />
+    })
   
-  //   return (
-  //     <div style={{marginLeft: "25px", marginTop: "10px", color:"white"}}>
-  //           <div style={{ display: 'flex', alignItems: 'center' }}>
-  //       <div style={{fontWeight: 700}}>{comment.by}</div>
-  //         <div
-  //           onClick={() => collapse(comment.id)}
-  //           style={{
-  //             cursor: 'pointer',
-  //             marginLeft: '6px',
-  //             fontSize: '12px'
-  //           }}
-  //         >
-  //         {comment.expanded ? `[-]` : `[+]`}
-  //         </div>
-  //           </div>
-  //       {comment.expanded && (
-  //         <div>
-  //           <div>{comment.text}</div>
-  //           {nestedComments}
-  //         </div>
-  //       )}
-  //     </div>
-  //   )
-  // }
+    return (
+      <div style={{marginLeft: "25px", marginTop: "10px", color:"white"}}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div style={{fontWeight: 700}}>{comment.by}</div>
+          <div
+            onClick={() => collapse(comment.id)}
+            style={{
+              cursor: 'pointer',
+              marginLeft: '6px',
+              fontSize: '12px'
+            }}
+          >
+          {comment.expanded ? `[-]` : `[+]`}
+          </div>
+            </div>
+        {comment.expanded && (
+          <div>
+            <div>{comment.text}</div>
+            {nestedComments}
+          </div>
+        )}
+      </div>
+    )
+  }
 
-  // function App() {
-  //   const [comments, setComments] = useState(commentData);
-  //   const [commentTree, setCommentTree] = useState(createTree(comments));
+  function App() {
+    const [comments, setComments] = useState(commentData);
+    const [commentTree, setCommentTree] = useState(createTree(comments));
   
-  //   useEffect(() => {
-  //     setCommentTree(createTree(comments));
-  //   }, [comments]);
+    useEffect(() => {
+      setCommentTree(createTree(comments));
+    }, [comments]);
 
-  //   // console.log(commentTree)
+    console.log(commentTree)
   
-  //   const handleCommentCollapse = (id) => {
-  //   const updatedComments = comments.map((c) => {
-  //       if (c.id === id) {
-  //         return {
-  //           ...c,
-  //           expanded: !c.expanded,
-  //         };
-  //       } else return c;
-  //     });
-  //     setComments(updatedComments);
-  //   };
-  //   return (
-  //     <div style={{ padding: '16px' }}>
-  //       {commentTree.map(comment => { // notice we are now using `commentTree` and not `commentData`
-  //         return <Comment key={comment.id} comment={comment} collapse={handleCommentCollapse} />
-  //       })}
-  //     </div>
-  //   )
-  // }
+    const handleCommentCollapse = (id) => {
+    const updatedComments = comments.map((c) => {
+        if (c.id === id) {
+          return {
+            ...c,
+            expanded: !c.expanded,
+          };
+        } else return c;
+      });
+      setComments(updatedComments);
+    };
+    return (
+      <div style={{ padding: '16px' }}>
+        {commentTree.map(comment => { // notice we are now using `commentTree` and not `commentData`
+          return <Comment key={comment.id} comment={comment} collapse={handleCommentCollapse} />
+        })}
+      </div>
+    )
+  }
   
 
 
