@@ -23,13 +23,13 @@ const List = ({ story: { id, by, title, kids, time, score, url}}) => {
     if(comment.data){
       const text = comment.data.text;
       return (
-        <div className={isOpen ? "list-item__commnet comment-priview open": "list-item__commnet comment-priview"}>
-          <div className="comment-priview__inner">
-            <div className="comment-priview__info">
-              <Link to={`/user/${comment.data.by}`} className="comment-priview__name">{comment.data.by}</Link>
-              <span className="comment-priview__time">{timeForToday(comment.data.time)}</span>
+        <div className={isOpen ? "list-item__commnet comment-preview open": "list-item__commnet comment-preview"}>
+          <div className="comment-preview__inner">
+            <div className="comment-preview__info">
+              <Link to={`/user/${comment.data.by}`} className="comment-preview__name">{comment.data.by}</Link>
+              <span className="comment-preview__time">{timeForToday(comment.data.time)}</span>
             </div>
-            <p className="comment-priview__desc"  dangerouslySetInnerHTML={{__html: text}}></p>
+            <p className="comment-preview__desc"  dangerouslySetInnerHTML={{__html: text}}></p>
           </div>
           <button className="btn btn-dropdown" onClick={() => {
             setToggleClass(isOpen => !isOpen)
@@ -44,7 +44,7 @@ const List = ({ story: { id, by, title, kids, time, score, url}}) => {
   return (
     <li className="list-item" id={id}>
       <div className="list-item__tit-wrap">
-      <Link to={`/detail/${id}`} className="list-item__tit"><h3>{title}</h3></Link>
+        <Link to={`/detail/${id}`} className="list-item__tit"><h3>{title}</h3></Link>
       </div>
       
       <CommnetText />

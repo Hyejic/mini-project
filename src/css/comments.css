@@ -1,0 +1,77 @@
+.comments {
+  
+}
+.comments .layer__back-wrap{
+  padding: 0 20rem;
+  box-sizing: border-box;
+}
+.comments__tit {
+  padding: 17rem 20rem;
+  font-size: 30em;
+  color: #fff;
+  letter-spacing: 0.8rem;
+}
+.comments-list {
+  position: relative;
+  border-bottom: 1px solid #38393D;
+}
+.comments-list__wrap {
+  height: 52em;
+  overflow: hidden;
+}
+.comments-list__wrap.open {
+  height: auto;
+}
+.comments-list__info {
+  padding: 18em 20em;
+}
+.comments-list__name {
+  margin-right: 8rem;
+  font-family: "Source Code Pro";
+  font-size: 12em;
+  color: #FF3E00;
+  text-decoration: underline;
+}
+.comments-list__time {
+  font-size: 12px;
+  font-size: 12em;
+  color: #838489;
+}
+.comments-list__desc {
+  padding: 15rem 20rem;
+  font-family: "Roboto";
+  font-size: 16rem;
+  line-height: 1.3;
+  color: #CECFD4;
+}
+.comments__re {
+  height: 0;
+  margin-top: 20em;
+  margin-left: 40em;
+}
+.comments__re.open {
+  height: auto;
+}
+.comments__re .comments-list__info {
+  border-top: 1px solid #38393D;
+  padding-left: 0;
+}
+.comments__re .comments-list__desc {
+  padding-left: 0;
+  padding-top: 0;
+}
+.comments .layer__inner {
+  padding-left: 0;
+  padding-right: 0;
+}
+.comments .btn-dropdown {
+  top: 13em;
+  right: 20em;
+}
+.comments .btn-more-hide {
+  padding-left: 20rem;
+  font-family: "Source Code Pro";
+  font-size: 12em;
+  color: #838489;
+  text-decoration: underline;
+}

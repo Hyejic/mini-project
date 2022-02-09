@@ -72,23 +72,23 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
-.comment-priview__inner {
+.comment-preview__inner {
   padding: 22em 16em 17em;
   border-top: 1px solid #38393D;
 }
-.comment-priview__name {
+.comment-preview__name {
   margin-right: 8rem;
   font-family: "Source Code Pro";
   font-size: 12em;
   color: #FF3E00;
   text-decoration: underline;
 }
-.comment-priview__time {
+.comment-preview__time {
   font-family: "Source Code Pro";
   font-size: 12em;
   color: #838489;
 }
-.comment-priview__desc {
+.comment-preview__desc {
   margin-top: 10rem;
   font-family: "Roboto";
   font-size: 12em;
@@ -99,7 +99,7 @@
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
-.comment-priview__desc a {
+.comment-preview__desc a {
   color: #838489;
   text-decoration: underline;
 }

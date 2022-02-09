@@ -24,17 +24,26 @@ export const UserCont = () => {
   const UserInfo = () => {
     if(state.item.data){
       const desc = state.item.data.about;
+      const DescWrap = () => {
+        if(desc){
+          return (
+            <p className="user__desc" dangerouslySetInnerHTML={{__html: desc}}></p>
+          )
+        }
+        return false;
+      }
       return (
         <div className="user__inner">
+          <div className="layer__back-wrap">
           <Link to={`/`} className="btn layer__btn-back" ><span className="ir-blind">뒤로가기</span></Link>
+          </div>
           <div className="user__header">
-            {/* <span className="user-rank super user__user-rank">{karmaSet(state.item.data.karma)}</span> */}
             <Karma karma={state.item.data.karma}/>
             <strong className="user__user-name">{state.item.data.id}</strong>
             <span className="user__post-karma">{state.item.data.karma} karma</span>
             <span className="user__post-joined">joined {timeForToday(state.item.data.created)}</span>
           </div>
-          <h3 className="user__desc" dangerouslySetInnerHTML={{__html: desc}}></h3>
+          <DescWrap />
         </div>
       )
     }
@@ -45,7 +54,7 @@ export const UserCont = () => {
       {
         state.loading ? <div>Loading...</div>
         : 
-        <div className='layer__inner'>
+        <div className="layer__inner">
           <UserInfo />
           <div className="user__slider">
             <nav className="list-section__nav">

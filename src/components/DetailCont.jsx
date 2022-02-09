@@ -45,7 +45,9 @@ export const DetailCont = ({story}) => {
     return (
       <section className="layer detail">
         <div className="layer__inner detail__inner">
-          <Link to={`/`} className="btn layer__btn-back" ><span className="ir-blind">뒤로가기</span></Link>
+          <div className="layer__back-wrap">
+            <Link to={`/`} className="btn layer__btn-back" ><span className="ir-blind">뒤로가기</span></Link>
+          </div>
           <div className="detail__header">
             <Karma karma={state.item.data.karma}/>
             <strong className="detail__user-name">{story.by}</strong>

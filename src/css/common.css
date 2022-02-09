@@ -101,14 +101,21 @@ img {
   z-index: 101;
 }
 .layer__inner {
-  padding: 20em 20em 32em;
+  padding: 0 20em 32em;
+}
+.layer__back-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 64em;
 }
 .layer__btn-back {
   width: 24em;
   height: 24em;
+  line-height: 64em;
   background: url('../images/btn_back_arrow.png') no-repeat center;
   background-size: cover;
-
 }
 
 /* user rank */
