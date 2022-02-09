@@ -1,24 +1,24 @@
-const submissionInitState = {
+const commentsInitState = {
   items: [],
   loading: false,
   error: null
 };
-const submissionReducer = (state = submissionInitState, action) => {
+const commnetsReducer = (state = commentsInitState, action) => {
   switch (action.type) {
-    case "FETCH_SUBMISSION_REQUEST" :
+    case "FETCH_COMMENTS_REQUEST" :
       return {
         ...state,
         loading: true,
         error: null,
       };
-    case "FETCH_SUBMISSION_SUCCESS" :
+    case "FETCH_COMMENTS_SUCCESS" :
       return {
         ...state,
         loading: false,
         items: action.payload,
         comment: action.comments,
       };
-    case "FETCH_SUBMISSION_FAILURE" :
+    case "FETCH_COMMENTS_FAILURE" :
       return {
         ...state,
         loading: false,
@@ -28,4 +28,4 @@ const submissionReducer = (state = submissionInitState, action) => {
       return state;
   }
 }
-export default submissionReducer;
+export default commnetsReducer;

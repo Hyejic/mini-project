@@ -49,6 +49,35 @@ export const UserCont = () => {
     }
     return false;
   }
+
+  const SlideWrap = () => {
+    if(state.item.data){
+      return (
+        <div className="user__slider">
+          <nav className="list-section__nav">
+          </nav>
+          <Swiper
+          modules={[Pagination, Scrollbar]}
+            spaceBetween={50}
+            slidesPerView={1}
+            scrollbar={{ draggable: true }}
+            pagination={{
+              el: '.list-section__nav',
+              clickable: true,
+                renderBullet: function (index, className) {
+                  return '<button class="' + className + '">' + (menu[index]) + '</button>';
+                },
+            }}
+          >
+            <SwiperSlide><UserSubmission submission={state.item.data.submitted}/></SwiperSlide>
+            <SwiperSlide><UserSubmission submission={state.item.data.submitted}/></SwiperSlide>
+            <SwiperSlide><UserSubmission submission={state.item.data.submitted}/></SwiperSlide>
+          </Swiper>
+        </div>
+      )
+    }
+    return false;
+  }
   return (
     <section className="layer user">
       {
@@ -56,29 +85,8 @@ export const UserCont = () => {
         : 
         <div className="layer__inner">
           <UserInfo />
-          <div className="user__slider">
-            <nav className="list-section__nav">
-            </nav>
-            <Swiper
-            modules={[Pagination, Scrollbar]}
-              spaceBetween={50}
-              slidesPerView={1}
-              scrollbar={{ draggable: true }}
-              pagination={{
-                el: '.list-section__nav',
-                clickable: true,
-                  renderBullet: function (index, className) {
-                    return '<button class="' + className + '">' + (menu[index]) + '</button>';
-                  },
-              }}
-            >
-              <SwiperSlide><UserSubmission /></SwiperSlide>
-              <SwiperSlide><UserSubmission /></SwiperSlide>
-              <SwiperSlide><UserSubmission /></SwiperSlide>
-            </Swiper>
-          </div>
+          <SlideWrap />
         </div>
-        
       }
     </section>
   )

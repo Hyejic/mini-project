@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { timeForToday } from '../utile/script';
 import getStory from '../action/storyAction';
 
-const List = ({ story: { id, by, title, kids, time, score, url}}) => {
+const List = ({ story: { id, by, title, kids, time, score, url, text}}) => {
   const firstKids = kids === undefined ? null : kids[0];
   const [comment, setComment] = useState([]);
 
@@ -44,7 +44,7 @@ const List = ({ story: { id, by, title, kids, time, score, url}}) => {
   return (
     <li className="list-item" id={id}>
       <div className="list-item__tit-wrap">
-        <Link to={`/detail/${id}`} className="list-item__tit"><h3>{title}</h3></Link>
+        <Link to={`/detail/${id}`} className="list-item__tit"><p>{title ? title : text}</p></Link>
       </div>
       
       <CommnetText />

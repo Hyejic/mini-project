@@ -1,14 +1,13 @@
-import Axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
-import { timeForToday } from '../utile/script';
-import { BASE_API_URL } from '../action/constants';
-import { DetailCont } from '../components/DetailCont';
-
+import { getComments } from '../action/commentsAction';
+import { CommentLIst } from '../components/CommentLIst';
 import '../css/comments.css';
 
 export const Comments = () => {
-  // const params = useParams();
+  const params = useParams();
+  // console.log(params.id)
   
   // const getDtailStory = async (id) => {
   //   try {
@@ -44,9 +43,16 @@ export const Comments = () => {
   //   } 
   //   return null;
   // } 
-  const [isOpen, setIsOpen] = useState(true);
-  const [reIsOpen, setReIsOpen] = useState(true);
-  const text = `<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis doloremque tenetur tempore voluptatibus porro quisquam. In, alias eaque commodi quae odit porro iure consectetur, modi totam pariatur ratione tempore explicabo?</p>`
+
+  const dispatch = useDispatch();
+  const state = useSelector(state => state.commnetsReducer);
+  
+  useEffect(() => {
+    dispatch(getComments(params.id))
+  }, []);
+
+  console.log(state)
+
   
   return (
     <section className="layer comments">
@@ -56,58 +62,9 @@ export const Comments = () => {
         </div>
         <h3 className="comments__tit">Comments</h3>
         <ul>
-          <li className="comments-list">
-            <div className={isOpen ? "comments-list__wrap open" : "comments-list__wrap"}>
-              <div className="comments-list__info">
-                <Link to={`/user/`} className="comments-list__name">name</Link>
-                <span className="comments-list__time">{timeForToday(123213123)}</span>
-              </div>
-              <p className="comments-list__desc" dangerouslySetInnerHTML={{__html: text}}></p>
-              <button className="btn btn-more-hide" onClick={() => {
-                setReIsOpen(reIsOpen => !reIsOpen)
-              }}>
-                {reIsOpen ? "hide.." : "more.."}
-              </button>
-              <div className={reIsOpen ? "comments__re open" : "comments__re"}>
-                <div className="comments-list__info">
-                  <Link to={`/user/`} className="comments-list__name">name</Link>
-                  <span className="comments-list__time">{timeForToday(123213123)}</span>
-                </div>
-                <p className="comments-list__desc" dangerouslySetInnerHTML={{__html: text}}></p>
-              </div>
-            </div>
-            <button className="btn btn-dropdown" onClick={() => {
-                setIsOpen(isOpen => !isOpen)
-              }}>
-              <span className="ir-blind">댓글 미리보기</span>
-            </button>
-          </li>
-          <li className="comments-list">
-            <div className={isOpen ? "comments-list__wrap open" : "comments-list__wrap"}>
-              <div className="comments-list__info">
-                <Link to={`/user/`} className="comments-list__name">name</Link>
-                <span className="comments-list__time">{timeForToday(123213123)}</span>
-              </div>
-              <p className="comments-list__desc" dangerouslySetInnerHTML={{__html: text}}></p>
-              <button className="btn btn-more-hide" onClick={() => {
-                setReIsOpen(reIsOpen => !reIsOpen)
-              }}>
-                {reIsOpen ? "hide.." : "more.."}
-              </button>
-              <div className={reIsOpen ? "comments__re open" : "comments__re"}>
-                <div className="comments-list__info">
-                  <Link to={`/user/`} className="comments-list__name">name</Link>
-                  <span className="comments-list__time">{timeForToday(123213123)}</span>
-                </div>
-                <p className="comments-list__desc" dangerouslySetInnerHTML={{__html: text}}></p>
-              </div>
-            </div>
-            <button className="btn btn-dropdown" onClick={() => {
-                setIsOpen(isOpen => !isOpen)
-              }}>
-              <span className="ir-blind">댓글 미리보기</span>
-            </button>
-          </li>
+          { state.loading ? <div>Loading...</div>
+            : state.items.map(({ data: story }) => story && <CommentLIst key={story.id} story={story} /> )
+          }
         </ul>
       </div>
     </section>

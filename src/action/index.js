@@ -5,6 +5,7 @@ import showAction from './showAction';
 import dailyAction from './dailyAction';
 import userInfoAction from './userInfoAction';
 import submissionAction from './submissionAction';
+import getComments from './commentsAction';
 
 const allActions = {
   topAction,
@@ -13,7 +14,8 @@ const allActions = {
   showAction,
   dailyAction,
   userInfoAction,
-  submissionAction
+  submissionAction,
+  getComments
 };
 
 export default allActions;

@@ -63,7 +63,7 @@
   margin-right: 16em;
   min-height: 63em;
 }
-.list-item__tit h3 {
+.list-item__tit p {
   font-size: 16em;
   color: #fff;
   overflow: hidden;

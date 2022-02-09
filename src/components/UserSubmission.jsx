@@ -3,14 +3,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getSubmission } from '../action/submissionAction';
 import List  from './List'; 
  
-export const UserSubmission = () => {
+export const UserSubmission = ({submission}) => {
+  // console.log(submission)
   const dispatch = useDispatch();
   const state = useSelector(state => state.submissionReducer);
   
   useEffect(() => {
-    dispatch(getSubmission())
+    dispatch(getSubmission(submission))
   }, []);
-  
+   console.log(state)
   return (
     <ul>
       {
