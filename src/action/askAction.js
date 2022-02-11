@@ -8,7 +8,7 @@ export const getAskStories = () => async (dispatch, getState) => {
     const { data: storyIds } = await Axios.get(
       `${BASE_API_URL}/askstories.json`
       );
-    const stories = await Promise.all(storyIds.slice(0, 5).map((storyId) => getStory(storyId)));
+    const stories = await Promise.all(storyIds.slice(0, 10).map((storyId) => getStory(storyId)));
     dispatch({type:"FETCH_ASK_SUCCESS", payload: stories})
   } catch (error) {
     dispatch({type:"FETCH_ASK_FAILURE", error: error})
