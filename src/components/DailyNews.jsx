@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getDailyStories } from '../action/dailyAction';
 import { timeForToday, Karma } from '../utile/script';
+import { Link } from 'react-router-dom';
 import getUser from '../action/userAction';
 import '../css/daily.css';
 
@@ -30,7 +31,7 @@ export const DailyNews = () => {
           <div className="daily-list__header">
             <Karma karma={karma.data.karma}/>
             <strong className="daily-list__name">{by}</strong>
-            <h3 className="daily-list__tit">{title}</h3>
+            <Link to={`/detail/${id}`} className="daily-list__tit"><p>{title}</p></Link>
             <span className="daily-list__time">{timeForToday(time)}</span>
           </div>
           <div className="daily-list__cont cont-aside">
@@ -40,7 +41,7 @@ export const DailyNews = () => {
               {
                 kids === undefined 
                 ? <button className="btn btn-comment">0</button>
-                : <button className="btn btn-comment">{kids.length}</button>
+                : <Link to={`/comments/${id}`} className="btn btn-comment" >{kids.length}</Link>
               }
             </div>
           </div>

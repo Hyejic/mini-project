@@ -56,7 +56,7 @@ const List = ({ story: { id, by, title, kids, time, score, url, text}}) => {
           {
             kids === undefined 
             ? <button className="btn btn-comment">0</button>
-            : <button className="btn btn-comment">{kids.length}</button>
+            : <Link to={`/comments/${id}`} className="btn btn-comment" >{kids.length}</Link>
           }
         </div>
       </div>
